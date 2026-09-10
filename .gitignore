@@ -1,0 +1,13 @@
+#sqlite database
+*.db
+
+#python cache
+__pycache__/
+*.pyc
+
+#os/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
