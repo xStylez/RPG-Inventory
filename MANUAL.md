@@ -1,19 +1,34 @@
 # RPG Inventory Manager — Manual
 
-How to use the GUI app day to day. For install and project layout, see [README.md](README.md).
+How to use the GUI app day to day. For project layout and developer setup, see [README.md](README.md).
 
 ---
 
 ## Starting the app
 
+### Option A — Windows download (recommended)
+
+No Python needed.
+
+1. Open **[Releases](https://github.com/xStylez/RPG-Inventory/releases)**
+2. Download **`dist.zip`** from the latest release
+3. Unzip the folder
+4. Double-click **`RPGInventory.exe`**
+5. The login screen appears
+
+If Windows blocks the file: **More info** → **Run anyway**.
+
+### Option B — Run from source (developers)
+
 1. Open a terminal in this folder (`project_rpg_inventory_gui`).
-2. Run:
+2. Install CustomTkinter if needed: `pip install customtkinter`
+3. Run:
 
    ```bash
    python main.py
    ```
 
-3. The login screen appears.
+4. The login screen appears.
 
 ### Login
 
@@ -181,8 +196,11 @@ Closing the window ends the session. Data already committed to the database stay
 
 | Problem                         | What to try                                      |
 |---------------------------------|--------------------------------------------------|
-| `ModuleNotFoundError: customtkinter` | Run `pip install customtkinter`            |
+| Want to play without coding     | Use the [Windows release](https://github.com/xStylez/RPG-Inventory/releases) `.exe` zip |
+| Windows blocks `RPGInventory.exe` | More info → Run anyway (unsigned desktop app) |
+| Missing files next to the `.exe` | Unzip the **whole** folder — don’t run only the `.exe` alone |
+| `ModuleNotFoundError: customtkinter` | Only for source runs: `pip install customtkinter` |
 | Window opens but DB seems empty | Normal on first run — create characters/items first |
 | Cannot delete an item           | Remove it from inventories first                 |
 | Login always fails              | Use exactly `admin` / `admin123` (case-sensitive)|
-| Wrong folder                    | Run `python main.py` from `project_rpg_inventory_gui` so the DB is created next to the code |
+| Wrong folder (source)           | Run `python main.py` from `project_rpg_inventory_gui` so the DB is created next to the code |

@@ -12,9 +12,35 @@ This is the GUI version.
 - **Inventory** — add/remove items, view a character’s bag, check item quantity
 - **Themed UI** — shared colors and widget helpers in `theme.py`
 
+## Download (Windows) — easiest way
 
+You do **not** need Python or the source code to try the app.
 
-## Requirements
+1. Go to **[Releases](https://github.com/xStylez/RPG-Inventory/releases)**
+2. Open the latest release (e.g. **v1.0.0**)
+3. Download **`dist.zip`** (under Assets)
+4. Unzip the folder
+5. Double-click **`RPGInventory.exe`**
+
+Windows may warn about an unknown publisher — choose **More info** → **Run anyway** if you trust the build.
+
+### Demo login
+
+| Username | Password   |
+| -------- | ---------- |
+| `admin`  | `admin123` |
+
+On first run the app creates a local `rpg_inventory.db` next to the executable (your data stays on your PC).
+
+Full day-to-day usage notes: [MANUAL.md](MANUAL.md).
+
+---
+
+## Run from source (developers)
+
+Use this if you want to change the code or run without the `.exe`.
+
+### Requirements
 
 - Python 3.10+
 - [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter)
@@ -23,9 +49,7 @@ This is the GUI version.
 pip install customtkinter
 ```
 
-
-
-## How to run
+### How to run
 
 From this folder:
 
@@ -33,17 +57,7 @@ From this folder:
 python main.py
 ```
 
-On first run the app creates `rpg_inventory.db` automatically (local only; ignored by git).
-
-### Demo login
-
-
-| Username | Password   |
-| -------- | ---------- |
-| `admin`  | `admin123` |
-
-
-
+---
 
 ## Project structure
 
@@ -63,8 +77,6 @@ project_rpg_inventory_gui/
 └── .gitignore
 ```
 
-
-
 ## Quick demo walkthrough
 
 1. Log in with `admin` / `admin123`
@@ -74,8 +86,6 @@ project_rpg_inventory_gui/
 5. Add the same item again with quantity `3` → view inventory (quantity should be **5**)
 6. Remove some or all → view again
 
-Full step-by-step usage notes are in [MANUAL.md](MANUAL.md).
-
 ## Design notes
 
 - One SQLite connection is opened in `App` and shared with screens via `self.app.cursor` / `self.app.conn`
@@ -83,4 +93,3 @@ Full step-by-step usage notes are in [MANUAL.md](MANUAL.md).
 - Adding an item that already exists in a bag **increases quantity** instead of creating a duplicate row
 - Deleting an item is blocked while it still appears in any inventory (clear it from inventories first)
 - Skillcores exist in the database schema for future work but are **not** exposed in the GUI yet
-

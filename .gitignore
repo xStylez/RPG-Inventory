@@ -11,3 +11,8 @@ Thumbs.db
 .vscode/
 .idea/
 
+
+#pyinstaller
+build/
+dist/
+dist.zip
